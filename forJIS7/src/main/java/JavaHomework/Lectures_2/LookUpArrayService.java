@@ -1,4 +1,4 @@
-package Lectures_2;
+package JavaHomework.Lectures_2;
 
 public class LookUpArrayService {
 

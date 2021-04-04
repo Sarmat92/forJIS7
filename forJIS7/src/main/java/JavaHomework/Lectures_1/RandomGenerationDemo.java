@@ -1,4 +1,4 @@
-package Lectures_1;
+package JavaHomework.Lectures_1;
 //**********@Checked***************//
 public class RandomGenerationDemo {
 
