@@ -4,22 +4,22 @@ import java.util.Objects;
 
 public class Dog extends Mammal {
 
-    private String dogName;
+    private Integer countOfLegs;
 
     public Dog() {
     }
 
-    public Dog(String animalsName, String mammalName, String dogName) {
-        super(animalsName, mammalName);
-        this.dogName = dogName;
+    public Dog(String name, Integer age, Integer countOfLegs) {
+        super(name, age);
+        this.countOfLegs = countOfLegs;
     }
 
-    public String getDogName() {
-        return dogName;
+    public Integer getCountOfLegs() {
+        return countOfLegs;
     }
 
-    public void setDogName(String dogName) {
-        this.dogName = dogName;
+    public void setCountOfLegs(Integer countOfLegs) {
+        this.countOfLegs = countOfLegs;
     }
 
     @Override
@@ -28,28 +28,28 @@ public class Dog extends Mammal {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Dog dog = (Dog) o;
-        return Objects.equals(dogName, dog.dogName);
+        return Objects.equals(countOfLegs, dog.countOfLegs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), dogName);
+        return Objects.hash(super.hashCode(), countOfLegs);
     }
 
     @Override
     public String toString() {
         return "Dog{" +
-                "dogName='" + dogName + '\'' +
+                "countOfLegs=" + countOfLegs +
                 '}';
     }
 
     @Override
-    public void about() {
-        System.out.println("about Dog");
+    public void sleep() {
+        super.sleep();
     }
 
     @Override
-    public void info() {
-        System.out.println("Dog is " + getDogName() + " and extends from " + getMammalName() + " and " + getAnimalsName());
+    public void run() {
+        super.run();
     }
 }

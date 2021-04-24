@@ -2,25 +2,24 @@ package JavaHomework.Lectures_9.Interfaces.Animal;
 
 import java.util.Objects;
 
-public class Mammal extends Animals {
+public abstract class Mammal extends Animals {
 
-    private String mammalName;
+    private Integer age;
 
     public Mammal() {
     }
 
-
-    public Mammal(String animalsName, String mammalName) {
-        super(animalsName);
-        this.mammalName = mammalName;
+    public Mammal(String name, Integer age) {
+        super(name);
+        this.age = age;
     }
 
-    public String getMammalName() {
-        return mammalName;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setMammalName(String mammalName) {
-        this.mammalName = mammalName;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     @Override
@@ -29,28 +28,33 @@ public class Mammal extends Animals {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Mammal mammal = (Mammal) o;
-        return Objects.equals(mammalName, mammal.mammalName);
+        return Objects.equals(age, mammal.age);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), mammalName);
+        return Objects.hash(super.hashCode(), age);
     }
 
     @Override
     public String toString() {
         return "Mammal{" +
-                "mammalName='" + mammalName + '\'' +
+                "age=" + age +
                 '}';
     }
 
     @Override
-    public void about() {
-        System.out.println("about Mammal");
+    public void sleep() {
+        super.sleep();
     }
 
     @Override
-    public void info() {
-        System.out.println("Mammal is "+getMammalName()+" and extends from "+getAnimalsName());
+    public void run() {
+        super.run();
+    }
+
+    @Override
+    public void fly() {
+        super.fly();
     }
 }

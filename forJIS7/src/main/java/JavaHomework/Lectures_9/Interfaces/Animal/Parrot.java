@@ -4,23 +4,22 @@ import java.util.Objects;
 
 public class Parrot extends Bird {
 
-    private String parrotName;
+    private String songName;
 
     public Parrot() {
     }
 
-
-    public Parrot(String animalsName, String birdName, String parrotName) {
-        super(animalsName, birdName);
-        this.parrotName = parrotName;
+    public Parrot(String name, String featherColor, String songName) {
+        super(name, featherColor);
+        this.songName = songName;
     }
 
-    public String getParrotName() {
-        return parrotName;
+    public String getSongName() {
+        return songName;
     }
 
-    public void setParrotName(String parrotName) {
-        this.parrotName = parrotName;
+    public void setSongName(String songName) {
+        this.songName = songName;
     }
 
     @Override
@@ -29,28 +28,29 @@ public class Parrot extends Bird {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Parrot parrot = (Parrot) o;
-        return Objects.equals(parrotName, parrot.parrotName);
+        return Objects.equals(songName, parrot.songName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), parrotName);
+        return Objects.hash(super.hashCode(), songName);
     }
 
     @Override
     public String toString() {
         return "Parrot{" +
-                "parrotName='" + parrotName + '\'' +
+                "songName='" + songName + '\'' +
                 '}';
     }
 
     @Override
-    public void about() {
-        System.out.println("about Parrot");
+    public void sleep() {
+        super.sleep();
     }
 
     @Override
-    public void info() {
-        System.out.println("Parrot is " + getParrotName() + " and extends from " + getBirdName()+" and "+getAnimalsName());
+    public void fly() {
+        super.fly();
     }
+
 }

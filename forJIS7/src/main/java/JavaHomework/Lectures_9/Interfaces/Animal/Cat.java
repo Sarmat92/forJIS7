@@ -4,23 +4,22 @@ import java.util.Objects;
 
 public class Cat extends Mammal {
 
-    private String catName;
+    private String color;
 
     public Cat() {
     }
 
-
-    public Cat(String animalsName, String mammalName, String catName) {
-        super(animalsName, mammalName);
-        this.catName = catName;
+    public Cat(String name, Integer age, String color) {
+        super(name, age);
+        this.color = color;
     }
 
-    public String getCatName() {
-        return catName;
+    public String getColor() {
+        return color;
     }
 
-    public void setCatName(String catName) {
-        this.catName = catName;
+    public void setColor(String color) {
+        this.color = color;
     }
 
     @Override
@@ -29,28 +28,28 @@ public class Cat extends Mammal {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Cat cat = (Cat) o;
-        return Objects.equals(catName, cat.catName);
+        return Objects.equals(color, cat.color);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), catName);
+        return Objects.hash(super.hashCode(), color);
     }
 
     @Override
     public String toString() {
         return "Cat{" +
-                "catName='" + catName + '\'' +
+                "color='" + color + '\'' +
                 '}';
     }
 
     @Override
-    public void about() {
-        System.out.println("about Cat");
+    public void sleep() {
+        super.sleep();
     }
 
     @Override
-    public void info() {
-        System.out.println("Cat is "+getCatName()+" and extends from "+getMammalName()+" and "+getAnimalsName());
+    public void run() {
+        super.run();
     }
 }

@@ -4,33 +4,21 @@ public class AnimalsDemo {
 
     public static void main(String[] args) {
 
-        Animals animals = new Animals("Father of all animals");
-        animals.info();
-        animals.about();
+        Cat cat = new Cat("Barsik",3,"Dark");
+        System.out.println(cat.getName());
+        cat.sleep();
+        cat.run();
         System.out.println();
 
-        Animals animalsMammal = new Mammal("Father of all animals","Father of all mammal");
-        animalsMammal.info();
-        animalsMammal.about();
+        Dog dog = new Dog("Friend", 12,4);
+        System.out.println(dog.getName());
+        dog.sleep();
+        dog.run();
         System.out.println();
 
-        Animals animalsCat = new Cat("Father of all animals","Father of all mammal","Boris");
-        animalsCat.info();
-        animalsCat.about();
-        System.out.println();
-
-        Animals animalDog = new Dog("Father of all animals","Father of all mammal","Druzok");
-        animalDog.info();
-        animalDog.about();
-        System.out.println();
-
-        Animals animalBird = new Bird("Father of all animals","Chirik");
-        animalBird.info();
-        animalBird.about();
-        System.out.println();
-
-        Animals animalParrot = new Parrot("Father of all animals","Chirik","Ara");
-        animalParrot.info();
-        animalParrot.about();
+        Parrot parrot = new Parrot("Kesha","green-red","Song of silence");
+        System.out.println(parrot.getName());
+        parrot.sleep();
+        parrot.fly();
     }
 }

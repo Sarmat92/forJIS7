@@ -2,25 +2,24 @@ package JavaHomework.Lectures_9.Interfaces.Animal;
 
 import java.util.Objects;
 
-public class Bird extends Animals {
+public abstract class Bird extends Animals {
 
-    private String birdName;
+    private String featherColor;
 
     public Bird() {
     }
 
-
-    public Bird(String animalsName, String birdName) {
-        super(animalsName);
-        this.birdName = birdName;
+    public Bird(String name, String featherColor) {
+        super(name);
+        this.featherColor = featherColor;
     }
 
-    public String getBirdName() {
-        return birdName;
+    public String getFeatherColor() {
+        return featherColor;
     }
 
-    public void setBirdName(String birdName) {
-        this.birdName = birdName;
+    public void setFeatherColor(String featherColor) {
+        this.featherColor = featherColor;
     }
 
     @Override
@@ -29,28 +28,28 @@ public class Bird extends Animals {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Bird bird = (Bird) o;
-        return Objects.equals(birdName, bird.birdName);
+        return Objects.equals(featherColor, bird.featherColor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), featherColor);
     }
 
     @Override
     public String toString() {
         return "Bird{" +
-                "birdName='" + birdName + '\'' +
+                "featherColor='" + featherColor + '\'' +
                 '}';
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), birdName);
+    public void sleep() {
+        super.sleep();
     }
 
     @Override
-    public void about() {
-        System.out.println("about Bird");
-    }
-
-    @Override
-    public void info() {
-        System.out.println("Bird is " + getBirdName()+" and extends from "+ getAnimalsName());
+    public void fly() {
+        super.fly();
     }
 }

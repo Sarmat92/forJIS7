@@ -2,25 +2,25 @@ package JavaHomework.Lectures_9.Interfaces.Animal;
 
 import java.util.Objects;
 
-public class Animals {
+public abstract class Animals {
 
-    private String animalsName;
+    private String name;
 
 
     public Animals() {
     }
 
-    public Animals(String animalsName) {
-        this.animalsName = animalsName;
+    public Animals(String name) {
+        this.name = name;
 
     }
 
-    public String getAnimalsName() {
-        return animalsName;
+    public String getName() {
+        return name;
     }
 
-    public void setAnimalsName(String animalsName) {
-        this.animalsName = animalsName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
@@ -28,26 +28,30 @@ public class Animals {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Animals animals = (Animals) o;
-        return Objects.equals(animalsName, animals.animalsName);
+        return Objects.equals(name, animals.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(animalsName);
+        return Objects.hash(name);
     }
 
     @Override
     public String toString() {
         return "Animals{" +
-                "animalsName='" + animalsName + '\'' +
+                "animalsName='" + name + '\'' +
                 '}';
     }
 
-    public void about(){
-        System.out.println("about Animal");
+    public void sleep(){
+        System.out.println("Z-z-z-z-z");
     }
 
-    public void info() {
-        System.out.println("Animal is " + getAnimalsName());
+    public void fly(){
+        System.out.println("Can fly");
+    }
+
+    public void run(){
+        System.out.println("Can run");
     }
 }
