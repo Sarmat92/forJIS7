@@ -6,7 +6,6 @@ import java.util.Map;
 public class UniqueWordCounter {
 
     public static Map<String, Integer> mapValue = new HashMap<>();
-    static int counter = 1;
 
     public static void main(String[] args) {
 
@@ -15,16 +14,17 @@ public class UniqueWordCounter {
         addWord("dog");
         addWord("cat");
         addWord("world");
+        addWord("dog");
         printWordsFrequency();
+        getMostFrequentWord();
     }
 
     public static void addWord(String word) {
-        for (Map.Entry<String, Integer> map : mapValue.entrySet()) {
-            if (map.getKey().contains(word)) {
-                counter++;
-            }
-        }
-        mapValue.put(word, counter);
+        if (mapValue.containsKey(word)) {
+            mapValue.put(word, mapValue.get(word) + 1);
+        } else mapValue.put(word, 1);
+
+
     }
 
     public static void printWordsFrequency() {
@@ -33,9 +33,16 @@ public class UniqueWordCounter {
         }
     }
 
-    public static int getMostFrequentWord() {
-        int frequentWord = mapValue.get(0);
+    public static void getMostFrequentWord() {
+        Integer maxElement = 1;
+        String result;
 
-        return frequentWord;
+        for (Map.Entry<String, Integer> maxMap : mapValue.entrySet()) {
+            if (maxMap.getValue() > maxElement) {
+                maxElement = maxMap.getValue();
+                result = maxMap.getKey();
+                System.out.println("Чаще всего вводится -> " + result);
+            }
+        }
     }
 }
