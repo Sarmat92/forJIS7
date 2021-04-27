@@ -4,15 +4,18 @@ public class LibraryDemo {
 
     public static void main(String[] args) {
 
-        Library.addBook(new Book("Ушинский", "Колобок"));
-        Library.addBook(new Book("Дюма", "Охота и Любовь"));
-        Library.addBook(new Book("Пушкин", "Стихи"));
-        Library.addBook(new Book("Толстой", "Стихи"));
+        Library library = new Library();
 
-        Library.showAllBook();
+        library.addBook(new Book("Ушинский", "Колобок"));
+        library.addBook(new Book("Дюма", "Охота и Любовь"));
+        library.addBook(new Book("Пушкин", "Стихи"));
+        library.addBook(new Book("Толстой", "Стихи"));
+
+        library.showAllBook();
         System.out.println();
-        Library.showAllBookByAuthor();
+        library.showAllBookByAuthor();
         System.out.println();
-        Library.searchBookByName("Стихи");
+        library.searchBookByName("Стихи");
+
     }
 }
