@@ -4,7 +4,7 @@ public class LibraryDemo {
 
     public static void main(String[] args) {
 
-        Library library = new Library();
+        BookLibrary library = new BookLibrary();
 
         library.addBook(new Book("Ушинский", "Колобок"));
         library.addBook(new Book("Дюма", "Охота и Любовь"));
