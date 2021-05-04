@@ -15,6 +15,7 @@ public class ShopDemo {
 
         shop.showAllProduct();
         shop.fiendProductByName("Milk");
+        shop.fiendProductByName("Bear");
 
     }
 }
