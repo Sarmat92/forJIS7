@@ -14,10 +14,7 @@ public class ShopDemo {
         shop.addProduct(new Product("Coffee",2.87));
 
         shop.showAllProduct();
-        System.out.println();
         shop.fiendProductByName("Milk");
-        System.out.println();
-        shop.deleteProduct(2);
-        shop.showAllProduct();
+
     }
 }
