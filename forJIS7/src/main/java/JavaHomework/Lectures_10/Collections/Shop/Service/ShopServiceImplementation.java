@@ -23,7 +23,7 @@ public class ShopServiceImplementation implements ShopService {
     }
 
     @Override
-    public void fiendProductByName(String productName) {
+    public String fiendProductByName(String productName) {
         boolean isFound = false;
         for (Product productEach:getProductList()) {
             if (productEach.getProductName().equals(productName)){
@@ -34,5 +34,6 @@ public class ShopServiceImplementation implements ShopService {
         if (!isFound){
             System.out.println("Product is not found. Add your product to shopping cart.");
         }
+        return null;
     }
 }

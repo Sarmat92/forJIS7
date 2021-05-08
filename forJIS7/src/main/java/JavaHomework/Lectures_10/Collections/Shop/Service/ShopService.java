@@ -10,6 +10,6 @@ public interface ShopService {
 
     void showAllProduct();
 
-    void fiendProductByName(String productName);
+    String fiendProductByName(String productName);
 
 }
