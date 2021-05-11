@@ -25,15 +25,17 @@ public class ShopServiceImplementation implements ShopService {
     @Override
     public String fiendProductByName(String productName) {
         boolean isFound = false;
+        String fiendProductByName = null;
         for (Product productEach:getProductList()) {
             if (productEach.getProductName().equals(productName)){
                 System.out.println(productEach.getProductName() + " " +productEach.getProductCost());
                 isFound = true;
+                fiendProductByName = productEach.getProductName();
             }
         }
         if (!isFound){
             System.out.println("Product is not found. Add your product to shopping cart.");
         }
-        return null;
+        return fiendProductByName;
     }
 }
