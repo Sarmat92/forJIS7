@@ -1,4 +1,4 @@
-package JavaHomework.TaskForArtemiy.Hospital.Repository;
+package JavaHomework.TaskForArtemiy.Hospital.Models;
 
 public enum DoctorReceptionTime {
 
@@ -14,12 +14,5 @@ public enum DoctorReceptionTime {
 
     DoctorReceptionTime(double timeOfReception) {
         this.timeOfReception = timeOfReception;
-    }
-
-    @Override
-    public String toString() {
-        return "DoctorReceptionTime{" +
-                "timeOfReception=" + timeOfReception +
-                '}';
     }
 }

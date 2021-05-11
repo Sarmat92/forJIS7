@@ -1,49 +1,46 @@
 package JavaHomework.TaskForArtemiy.Hospital.Models;
 
-import JavaHomework.TaskForArtemiy.Hospital.Repository.DoctorReceptionTime;
-import JavaHomework.TaskForArtemiy.Hospital.Repository.ListOfDoctors;
-
 import java.util.Objects;
 
 public class Doctors {
 
-    private String firstNameOfDoctor;
-    private String secondNameOfDoctor;
-    private ListOfDoctors listOfDoctors;
-    private DoctorReceptionTime doctorReceptionTime;
+    private String firstName;
+    private String secondName;
+    private DoctorTypes doctorType;
+    private DoctorReceptionTime doctorReceptionTime;//TODO delete
 
     public Doctors() {
     }
 
-    public Doctors(String firstNameOfDoctor, String secondNameOfDoctor, ListOfDoctors listOfDoctors, DoctorReceptionTime doctorReceptionTime) {
-        this.firstNameOfDoctor = firstNameOfDoctor;
-        this.secondNameOfDoctor = secondNameOfDoctor;
-        this.listOfDoctors = listOfDoctors;
+    public Doctors(String firstName, String secondName, DoctorTypes doctorType, DoctorReceptionTime doctorReceptionTime) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.doctorType = doctorType;
         this.doctorReceptionTime = doctorReceptionTime;
     }
 
-    public String getFirstNameOfDoctor() {
-        return firstNameOfDoctor;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstNameOfDoctor(String firstNameOfDoctor) {
-        this.firstNameOfDoctor = firstNameOfDoctor;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getSecondNameOfDoctor() {
-        return secondNameOfDoctor;
+    public String getSecondName() {
+        return secondName;
     }
 
-    public void setSecondNameOfDoctor(String secondNameOfDoctor) {
-        this.secondNameOfDoctor = secondNameOfDoctor;
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
     }
 
-    public ListOfDoctors getListOfDoctors() {
-        return listOfDoctors;
+    public DoctorTypes getDoctorType() {
+        return doctorType;
     }
 
-    public void setListOfDoctors(ListOfDoctors listOfDoctors) {
-        this.listOfDoctors = listOfDoctors;
+    public void setDoctorType(DoctorTypes doctorType) {
+        this.doctorType = doctorType;
     }
 
     public DoctorReceptionTime getDoctorReceptionTime() {
@@ -59,23 +56,23 @@ public class Doctors {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Doctors doctors = (Doctors) o;
-        return Objects.equals(firstNameOfDoctor, doctors.firstNameOfDoctor)
-                && Objects.equals(secondNameOfDoctor, doctors.secondNameOfDoctor)
-                && listOfDoctors == doctors.listOfDoctors
+        return Objects.equals(firstName, doctors.firstName)
+                && Objects.equals(secondName, doctors.secondName)
+                && doctorType == doctors.doctorType
                 && doctorReceptionTime == doctors.doctorReceptionTime;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(firstNameOfDoctor, secondNameOfDoctor, listOfDoctors, doctorReceptionTime);
+        return Objects.hash(firstName, secondName, doctorType, doctorReceptionTime);
     }
 
     @Override
     public String toString() {
         return "Doctors{" +
-                "firstNameOfDoctor='" + firstNameOfDoctor + '\'' +
-                ", secondNameOfDoctor='" + secondNameOfDoctor + '\'' +
-                ", listOfDoctors=" + listOfDoctors +
+                "firstNameOfDoctor='" + firstName + '\'' +
+                ", secondNameOfDoctor='" + secondName + '\'' +
+                ", listOfDoctors=" + doctorType +
                 ", doctorReceptionTime=" + doctorReceptionTime +
                 '}';
     }

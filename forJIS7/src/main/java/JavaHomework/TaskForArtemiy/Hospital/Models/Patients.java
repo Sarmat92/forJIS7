@@ -1,8 +1,5 @@
 package JavaHomework.TaskForArtemiy.Hospital.Models;
 
-import JavaHomework.TaskForArtemiy.Hospital.Repository.DoctorReceptionTime;
-import JavaHomework.TaskForArtemiy.Hospital.Repository.ListOfDoctors;
-
 import java.util.Objects;
 
 public class Patients {
@@ -10,14 +7,14 @@ public class Patients {
     private String firstNameOfPatient;
     private String secondNameOfPatient;
     private boolean paymentOfADoctor;
-    private ListOfDoctors listOfDoctors;
+    private DoctorTypes listOfDoctors;
     private DoctorReceptionTime doctorReceptionTime;
 
 
     public Patients() {
     }
 
-    public Patients(String firstNameOfPatient, String secondNameOfPatient, boolean paymentOfADoctor, ListOfDoctors listOfDoctors, DoctorReceptionTime doctorReceptionTime) {
+    public Patients(String firstNameOfPatient, String secondNameOfPatient, boolean paymentOfADoctor, DoctorTypes listOfDoctors, DoctorReceptionTime doctorReceptionTime) {
         this.firstNameOfPatient = firstNameOfPatient;
         this.secondNameOfPatient = secondNameOfPatient;
         this.paymentOfADoctor = paymentOfADoctor;
@@ -49,11 +46,11 @@ public class Patients {
         this.paymentOfADoctor = paymentOfADoctor;
     }
 
-    public ListOfDoctors getListOfDoctors() {
+    public DoctorTypes getListOfDoctors() {
         return listOfDoctors;
     }
 
-    public void setListOfDoctors(ListOfDoctors listOfDoctors) {
+    public void setListOfDoctors(DoctorTypes listOfDoctors) {
         this.listOfDoctors = listOfDoctors;
     }
 
