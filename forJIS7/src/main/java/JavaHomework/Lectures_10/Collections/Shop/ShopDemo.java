@@ -14,8 +14,8 @@ public class ShopDemo {
         shop.addProduct(new Product("Coffee",2.87));
 
         shop.showAllProduct();
-        shop.fiendProductByName("Milk");
-        shop.fiendProductByName("Bear");
-
+        System.out.println();
+        shop.fiendProductByName("Tee");
+        shop.fiendProductByName("Baton");
     }
 }

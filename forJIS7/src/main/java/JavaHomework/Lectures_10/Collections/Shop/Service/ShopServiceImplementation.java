@@ -1,9 +1,13 @@
 package JavaHomework.Lectures_10.Collections.Shop.Service;
 
+import JavaHomework.Lectures_10.Collections.Shop.Exceptions.ProductValidateExceptions;
 import JavaHomework.Lectures_10.Collections.Shop.Model.Product;
+import ch.qos.logback.core.html.IThrowableRenderer;
+
 import static JavaHomework.Lectures_10.Collections.Shop.Repository.Shop.*;
 
 public class ShopServiceImplementation implements ShopService {
+
 
     @Override
     public void addProduct(Product product) {
@@ -11,8 +15,8 @@ public class ShopServiceImplementation implements ShopService {
     }
 
     @Override
-    public void deleteProduct(int productForDelete) {
-        getProductList().remove(productForDelete);
+    public void deleteProduct(Product product) {
+        getProductList().remove(product);
     }
 
     @Override
@@ -23,19 +27,18 @@ public class ShopServiceImplementation implements ShopService {
     }
 
     @Override
-    public String fiendProductByName(String productName) {
-        boolean isFound = false;
-        String fiendProductByName = null;
-        for (Product productEach:getProductList()) {
+    public Product fiendProductByName(String productName) throws ProductValidateExceptions {
+
+        // проверяем list на наличие продукта с нужным именем;
+        for (Product productEach:getProductList())  {
             if (productEach.getProductName().equals(productName)){
-                System.out.println(productEach.getProductName() + " " +productEach.getProductCost());
-                isFound = true;
-                fiendProductByName = productEach.getProductName();
+
+                //если найдено, возвращаем этот объект;
+                System.out.println(productEach);
+                return productEach;
             }
         }
-        if (!isFound){
-            System.out.println("Product is not found. Add your product to shopping cart.");
-        }
-        return fiendProductByName;
+        // если не найдено, бросить исключение с сообщением;
+       throw new ProductValidateExceptions(productName +" " + "Product not found.");
     }
 }

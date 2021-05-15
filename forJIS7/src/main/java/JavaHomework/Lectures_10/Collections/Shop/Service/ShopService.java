@@ -6,10 +6,10 @@ public interface ShopService {
 
     void addProduct(Product product);
 
-    void deleteProduct(int productForDelete);
+    void deleteProduct(Product product);
 
     void showAllProduct();
 
-    String fiendProductByName(String productName);
+    Object fiendProductByName(String productName);
 
 }
