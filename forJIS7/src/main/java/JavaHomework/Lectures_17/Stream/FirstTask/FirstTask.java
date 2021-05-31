@@ -12,10 +12,11 @@ public class FirstTask {
                 .distinct()
                 .limit(count)
                 .boxed()
+                .filter(it -> it/2 == 0)
                 .collect(Collectors.toSet());
     }
     public static void main(String[] args) {
 
-        System.out.println(randomNumber(5));
+        System.out.println(randomNumber(15));
     }
 }
