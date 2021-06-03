@@ -4,7 +4,6 @@ import JavaHomework.Lectures_17.Stream.ThirdTask.Model.Product;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static JavaHomework.Lectures_17.Stream.ThirdTask.Repository.ProductRepository.*;
@@ -12,11 +11,18 @@ import static JavaHomework.Lectures_17.Stream.ThirdTask.Repository.ProductReposi
 public class ProductService implements Service {
 
     @Override
-    public List<Product> fiendProduct() {
-        var discountValue = productList.stream()
+    public List<Product> findProductByDiscount() {
+        var discountedProducts = productList.stream()
                 .filter(it -> it.getDiscount() >= 30)
                 .collect(Collectors.toList());
-        return discountValue;
+        return discountedProducts;
+    }
+
+    public List<Product>findProductByPrice(){
+        List<Product> products = findProductByDiscount().stream()
+                .filter(product -> product.getPrice() <= 10.5)
+                .collect(Collectors.toList());
+        return products;
     }
 
     @Override

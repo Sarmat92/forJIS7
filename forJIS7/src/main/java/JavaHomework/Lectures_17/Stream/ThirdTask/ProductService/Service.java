@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface Service {
 
-    List<Product> fiendProduct();
+    List<Product> findProductByDiscount();
 
     Product maxProductPrice();
 
