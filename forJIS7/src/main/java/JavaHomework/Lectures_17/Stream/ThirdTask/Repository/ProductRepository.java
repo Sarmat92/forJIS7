@@ -9,14 +9,4 @@ public class ProductRepository {
 
     public static List<Product> productList = new ArrayList<>();
 
-//    List<Product> productList = listProduct();
-//    private static List<Product>listProduct(){
-//        return List.of(
-//                new Product("Milk",25,10),
-//                new Product("Tea", 14,50),
-//                new Product("Coffee",5,14),
-//                new Product("Bread",1,5)
-//        );
-//    }
-
 }

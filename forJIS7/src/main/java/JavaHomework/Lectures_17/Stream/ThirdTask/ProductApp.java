@@ -15,8 +15,9 @@ public class ProductApp {
         productList.add(new Product("Bread",8,50));
 
         var productService = new ProductService();
-        productService.fiendProduct();
-        productService.minProductPrice();
-        productService.maxProductPrice();
+        System.out.println(productService.fiendProduct());
+        System.out.println(productService.minProductPrice());
+        System.out.println(productService.maxProductPrice());
+
     }
 }

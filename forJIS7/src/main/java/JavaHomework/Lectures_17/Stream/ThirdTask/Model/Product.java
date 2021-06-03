@@ -1,6 +1,8 @@
 package JavaHomework.Lectures_17.Stream.ThirdTask.Model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor

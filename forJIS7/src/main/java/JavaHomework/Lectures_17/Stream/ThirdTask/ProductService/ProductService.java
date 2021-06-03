@@ -4,6 +4,7 @@ import JavaHomework.Lectures_17.Stream.ThirdTask.Model.Product;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import static JavaHomework.Lectures_17.Stream.ThirdTask.Repository.ProductRepository.*;
@@ -12,26 +13,27 @@ public class ProductService implements Service {
 
     @Override
     public List<Product> fiendProduct() {
-        List<Product> discountValue = productList.stream()         //тут как-то
-                .filter(discount -> discount.getDiscount() >= 30)  //записал
-                .collect(Collectors.toList());                     //в переменную
-        System.out.println(discountValue);
+        var discountValue = productList.stream()
+                .filter(it -> it.getDiscount() >= 30)
+                .collect(Collectors.toList());
         return discountValue;
     }
 
     @Override
-    public List<Product> maxProductPrice() {
-        productList.stream()                                   //как это
-                .max(Comparator.comparing(Product::getPrice))  //записать
-                .ifPresent(System.out::println);               //в переменную
-        return null;
+    public Product maxProductPrice() {
+        var maxProduct = productList.stream()
+                .max(Comparator.comparing(Product::getPrice));
+        if (maxProduct.isPresent()) {
+            return maxProduct.get();
+        } else return null;
     }
 
     @Override
-    public List<Product> minProductPrice() {
-        productList.stream()                                   //как это
-                .min(Comparator.comparing(Product::getPrice))  //записать
-                .ifPresent(System.out::println);               //в переменную
-        return null;
+    public Product minProductPrice() {
+        var minProduct = productList.stream()
+                .min(Comparator.comparing(Product::getPrice));
+        if (minProduct.isPresent()) {
+            return minProduct.get();
+        }else return null;
     }
 }

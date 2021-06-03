@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface Service {
 
-    List<Product> fiendProduct ();
+    List<Product> fiendProduct();
 
-    List<Product> maxProductPrice();
+    Product maxProductPrice();
 
-    List<Product> minProductPrice();
+    Product minProductPrice();
 }
