@@ -13,6 +13,8 @@ public class ProductApp {
         productList.add(new Product("Coffee", 15.99,0));
         productList.add(new Product("Tee", 2.99,0));
         productList.add(new Product("Bread",8.99,50));
+        productList.add(new Product("Beer", 1.99,10));
+        productList.add(new Product("Potato",0.99,5));
 
         var productService = new ProductService();
 //        System.out.println(productService.findProductByDiscount());
