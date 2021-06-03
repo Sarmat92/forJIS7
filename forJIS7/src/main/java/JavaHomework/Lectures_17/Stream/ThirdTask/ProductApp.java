@@ -9,16 +9,18 @@ public class ProductApp {
 
     public static void main(String[] args) {
 
-        productList.add(new Product("Milk", 25, 45));
-        productList.add(new Product("Coffee", 15,5));
-        productList.add(new Product("Tee", 2,1));
-        productList.add(new Product("Bread",8,50));
+        productList.add(new Product("Milk", 25.99, 45));
+        productList.add(new Product("Coffee", 15.99,0));
+        productList.add(new Product("Tee", 2.99,0));
+        productList.add(new Product("Bread",8.99,50));
 
         var productService = new ProductService();
-        System.out.println(productService.findProductByDiscount());
-        System.out.println(productService.minProductPrice());
+//        System.out.println(productService.findProductByDiscount());
+//        System.out.println(productService.minProductPrice());
+//        System.out.println(productService.maxProductPrice());
+//        System.out.println(productService.findProductByPrice());
+        System.out.println(productService.findProductWithoutDiscount());
         System.out.println(productService.maxProductPrice());
-        System.out.println(productService.findProductByPrice());
 
     }
 }

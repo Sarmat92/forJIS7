@@ -12,26 +12,30 @@ public class ProductService implements Service {
 
     @Override
     public List<Product> findProductByDiscount() {
-        var discountedProducts = productList.stream()
+        return productList.stream()
                 .filter(it -> it.getDiscount() >= 30)
                 .collect(Collectors.toList());
-        return discountedProducts;
     }
 
     public List<Product>findProductByPrice(){
-        List<Product> products = findProductByDiscount().stream()
+        return findProductByDiscount().stream()
                 .filter(product -> product.getPrice() <= 10.5)
                 .collect(Collectors.toList());
-        return products;
     }
 
     @Override
     public Product maxProductPrice() {
-        var maxProduct = productList.stream()
+        var maxProduct = findProductWithoutDiscount().stream()
                 .max(Comparator.comparing(Product::getPrice));
         if (maxProduct.isPresent()) {
             return maxProduct.get();
         } else return null;
+    }
+
+    public List<Product> findProductWithoutDiscount(){
+        return productList.stream()
+                .filter(product -> product.getDiscount() == 0)
+                .collect(Collectors.toList());
     }
 
     @Override
