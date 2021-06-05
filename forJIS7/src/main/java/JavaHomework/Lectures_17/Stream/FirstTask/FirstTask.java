@@ -18,13 +18,11 @@ public class FirstTask {
                 .collect(Collectors.toSet());
     }
 
-
-
     public static void main(String[] args) {
 
-       // System.out.println(randomNumber(15));     //первый вариант
+        System.out.println(randomNumber(15));
 
-        randomNumber();                             //второй вариант
+        randomNumber();                             // второй вариант
         System.out.println(randomList);
         randomList.stream()
                 .filter(it -> it % 2 == 0)
@@ -38,6 +36,5 @@ public class FirstTask {
         for (int i = 0; i < 10; i++) {
             randomList.add((int) (Math.random() * 100));
         }
-
     }
 }

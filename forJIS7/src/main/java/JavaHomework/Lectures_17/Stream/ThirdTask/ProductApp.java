@@ -17,10 +17,11 @@ public class ProductApp {
         productList.add(new Product("Potato",0.99,5));
 
         var productService = new ProductService();
-//        System.out.println(productService.findProductByDiscount());
-//        System.out.println(productService.minProductPrice());
-//        System.out.println(productService.maxProductPrice());
-//        System.out.println(productService.findProductByPrice());
+
+        System.out.println(productService.findProductByDiscount());
+        System.out.println(productService.minProductPrice());
+        System.out.println(productService.maxProductPrice());
+        System.out.println(productService.findProductByPrice());
         System.out.println(productService.findProductWithoutDiscount());
         System.out.println(productService.maxProductPrice());
 

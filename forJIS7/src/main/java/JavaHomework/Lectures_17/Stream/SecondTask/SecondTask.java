@@ -3,7 +3,6 @@ package JavaHomework.Lectures_17.Stream.SecondTask;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class SecondTask {
 
@@ -19,14 +18,13 @@ public class SecondTask {
         stringSet.add("закат");
 
         setStringSet("рас");
-
     }
 
     public static void setStringSet(String string) {
-        Set<String> startEnd = stringSet.stream()
+        var evenNumbers = stringSet.stream()
                 .filter(it -> it.endsWith(string) | it.startsWith(string))
                 .collect(Collectors.toSet());
-        System.out.println(startEnd);
+        System.out.println(evenNumbers);
 
 
     }
