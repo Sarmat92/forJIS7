@@ -1,8 +1,8 @@
 package JavaHomework.TaskForArtemiy.Hospital.Service;
 
 import JavaHomework.TaskForArtemiy.Hospital.Models.DoctorReceptionTime;
-import JavaHomework.TaskForArtemiy.Hospital.Models.Doctors;
-import JavaHomework.TaskForArtemiy.Hospital.Models.Patients;
+import JavaHomework.TaskForArtemiy.Hospital.Models.Doctor;
+import JavaHomework.TaskForArtemiy.Hospital.Models.Patient;
 import JavaHomework.TaskForArtemiy.Hospital.Repository.RegistrationImpl;
 
 public class RegistrationService {
@@ -16,15 +16,15 @@ public class RegistrationService {
         this.registration = registration;
     }
 
-    public Patients showListAllPatients() {
+    public Patient showListAllPatients() {
         return registration.showListAllPatients();
     }
 
-    public Doctors showListAllDoctors() {
+    public Doctor showListAllDoctors() {
         return registration.showListAllDoctors();
     }
 
-    public void addPatientToDoctor(Doctors doctor, Patients patient, DoctorReceptionTime time) {
+    public void addPatientToDoctor(Doctor doctor, Patient patient, DoctorReceptionTime time) {
         registration.addPatientToDoctor(doctor, patient, time);
     }
 }

@@ -1,14 +1,14 @@
 package JavaHomework.TaskForArtemiy.Hospital.Repository;
 
 import JavaHomework.TaskForArtemiy.Hospital.Models.DoctorReceptionTime;
-import JavaHomework.TaskForArtemiy.Hospital.Models.Doctors;
-import JavaHomework.TaskForArtemiy.Hospital.Models.Patients;
+import JavaHomework.TaskForArtemiy.Hospital.Models.Doctor;
+import JavaHomework.TaskForArtemiy.Hospital.Models.Patient;
 
 public interface Repository {
 
-    Patients showListAllPatients();
+    Patient showListAllPatients();
 
-    Doctors showListAllDoctors();
+    Doctor showListAllDoctors();
 
-    void addPatientToDoctor(Doctors doctor, Patients patient, DoctorReceptionTime time);
+    void addPatientToDoctor(Doctor doctor, Patient patient, DoctorReceptionTime time);
 }

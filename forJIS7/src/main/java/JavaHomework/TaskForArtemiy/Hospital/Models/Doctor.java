@@ -2,17 +2,17 @@ package JavaHomework.TaskForArtemiy.Hospital.Models;
 
 import java.util.Objects;
 
-public class Doctors {
+public class Doctor {
 
     private String firstName;
     private String secondName;
     private DoctorTypes doctorType;
     private DoctorReceptionTime doctorReceptionTime;//TODO delete
 
-    public Doctors() {
+    public Doctor() {
     }
 
-    public Doctors(String firstName, String secondName, DoctorTypes doctorType, DoctorReceptionTime doctorReceptionTime) {
+    public Doctor(String firstName, String secondName, DoctorTypes doctorType, DoctorReceptionTime doctorReceptionTime) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.doctorType = doctorType;
@@ -55,7 +55,7 @@ public class Doctors {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Doctors doctors = (Doctors) o;
+        Doctor doctors = (Doctor) o;
         return Objects.equals(firstName, doctors.firstName)
                 && Objects.equals(secondName, doctors.secondName)
                 && doctorType == doctors.doctorType
