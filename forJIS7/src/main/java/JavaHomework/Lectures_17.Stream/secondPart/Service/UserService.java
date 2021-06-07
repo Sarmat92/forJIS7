@@ -12,10 +12,9 @@ public class UserService implements Service {
     @Override
     public List<User> checkUserStatus() {
 
-        List<User> userStatus = userList.stream()
+        return userList.stream()
                 .filter(it -> it.getUserStatus().equals(UserStatus.GUEST))
                 .collect(Collectors.toList());
-        return userStatus;
     }
 
     @Override
