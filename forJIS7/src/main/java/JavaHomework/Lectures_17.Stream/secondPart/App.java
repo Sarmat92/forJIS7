@@ -1,7 +1,5 @@
 package JavaHomework.Lectures_17.Stream.secondPart;
 
-import JavaHomework.Lectures_17.Stream.secondPart.Model.User;
-import JavaHomework.Lectures_17.Stream.secondPart.Model.UserStatus;
 import JavaHomework.Lectures_17.Stream.secondPart.Service.UserService;
 
 
