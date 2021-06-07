@@ -7,4 +7,6 @@ import java.util.List;
 public interface Service {
 
     List<User> checkUserStatus();
+
+    void addUserList();
 }
