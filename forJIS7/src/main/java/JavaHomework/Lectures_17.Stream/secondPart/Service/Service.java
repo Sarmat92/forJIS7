@@ -13,4 +13,6 @@ public interface Service {
     List<User> changeUserStatusGuestToUser();
 
     List<User> changeIsActive();
+
+    void showUserList();
 }

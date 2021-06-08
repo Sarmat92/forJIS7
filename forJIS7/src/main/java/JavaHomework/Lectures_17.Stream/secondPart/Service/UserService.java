@@ -11,6 +11,12 @@ import static JavaHomework.Lectures_17.Stream.secondPart.Repository.UserReposito
 public class UserService implements Service {
 
     @Override
+    public void showUserList() {
+        userList
+                .forEach(System.out::println);
+    }
+
+    @Override
     public List<User> changeIsActive() {
         return userList.stream()
                 .peek(it->it.setIsActive(true))

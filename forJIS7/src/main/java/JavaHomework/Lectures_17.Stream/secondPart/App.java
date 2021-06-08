@@ -10,8 +10,12 @@ public class App {
         var userService = new UserService();
 
         userService.addUserList();
+        userService.showUserList();
+        System.out.println();
         System.out.println(userService.checkUserStatus());
         System.out.println(userService.changeUserStatusGuestToUser());
         System.out.println(userService.changeIsActive());
+        System.out.println();
+        userService.showUserList();
     }
 }
