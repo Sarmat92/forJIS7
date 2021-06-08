@@ -12,5 +12,6 @@ public class App {
         userService.addUserList();
         System.out.println(userService.checkUserStatus());
         System.out.println(userService.changeUserStatusGuestToUser());
+        System.out.println(userService.changeIsActive());
     }
 }

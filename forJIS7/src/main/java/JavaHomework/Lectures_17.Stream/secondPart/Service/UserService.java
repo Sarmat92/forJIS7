@@ -11,8 +11,15 @@ import static JavaHomework.Lectures_17.Stream.secondPart.Repository.UserReposito
 public class UserService implements Service {
 
     @Override
+    public List<User> changeIsActive() {
+        return userList.stream()
+                .peek(it->it.setIsActive(true))
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public List<User> changeUserStatusGuestToUser() {
-         return checkUserStatus().stream()
+         return userList.stream()
                 .peek(it->it.setUserStatus(UserStatus.USER))
                  .collect(Collectors.toList());
     }
@@ -35,5 +42,8 @@ public class UserService implements Service {
 
         userList.add(new User(3, "Sasha", "Gromov", "SashaGrom", 25,
                 "gromov@mail.ru", 852, UserStatus.VIP_USER, false));
+
+        userList.add(new User(4,"Karolina","Kas","Karolinka",17,
+                "Kasik@gmail.com", 1405,UserStatus.USER,false));
     }
 }
