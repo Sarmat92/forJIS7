@@ -9,4 +9,6 @@ public interface Service {
     List<User> checkUserStatus();
 
     void addUserList();
+
+    List<User> changeUserStatusGuestToUser();
 }

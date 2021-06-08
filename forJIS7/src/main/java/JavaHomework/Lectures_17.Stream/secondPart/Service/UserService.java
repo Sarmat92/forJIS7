@@ -9,9 +9,16 @@ import java.util.stream.Collectors;
 import static JavaHomework.Lectures_17.Stream.secondPart.Repository.UserRepository.*;
 
 public class UserService implements Service {
+
+    @Override
+    public List<User> changeUserStatusGuestToUser() {
+         return checkUserStatus().stream()
+                .peek(it->it.setUserStatus(UserStatus.USER))
+                 .collect(Collectors.toList());
+    }
+
     @Override
     public List<User> checkUserStatus() {
-
         return userList.stream()
                 .filter(it -> it.getUserStatus().equals(UserStatus.GUEST))
                 .collect(Collectors.toList());
