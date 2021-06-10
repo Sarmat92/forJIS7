@@ -1,15 +1,15 @@
 package JavaHomework.Lectures_17.Stream.secondPart;
 
-import JavaHomework.Lectures_17.Stream.secondPart.Service.UserService;
+import JavaHomework.Lectures_17.Stream.secondPart.Service.UserServiceImpl;
 
 
 public class App {
 
     public static void main(String[] args) {
 
-        var userService = new UserService();
+        var userService = new UserServiceImpl();
 
-        userService.addUserList();
+        userService.initialUserList();
         userService.showUserList();
         System.out.println();
         System.out.println(userService.checkUserStatus());
