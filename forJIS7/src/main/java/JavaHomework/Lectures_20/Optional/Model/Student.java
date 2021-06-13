@@ -1,4 +1,4 @@
-package JavaHomework.Lectures_20.Optional;
+package JavaHomework.Lectures_20.Optional.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class Lecturer {
+public class Student {
 
     private String firstName;
     private String lastName;
